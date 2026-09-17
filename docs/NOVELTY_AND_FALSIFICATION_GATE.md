@@ -22,6 +22,7 @@ The literature already establishes, in various settings, that:
 - smooth invertible coordinate changes preserve critical-point inertia at a
   stationary point;
 - block positive-definiteness can be characterized through Schur complements;
+- persistence of nondegenerate critical points under perturbation is classical;
 - discrete optimization may exhibit transient amplification despite
   asymptotic spectral stability.
 
@@ -35,13 +36,21 @@ cycle establishes all of the following.
 ### G1 — Nontrivial theorem
 
 A transformation or composition theorem whose content is not exhausted by
-standard congruence, Weyl perturbation, implicit-function, or Schur-complement
-facts.
+standard congruence, Weyl perturbation, implicit-function, critical-point
+persistence, or Schur-complement facts.
+
+For nonlinear composition, the theorem must account for the displacement or
+continuation of the coupled critical object rather than evaluating curvature
+only at the uncoupled stationary point.
 
 ### G2 — Predictive matrix-free certificate
 
 A certificate estimable with matrix-free operations whose predicted qualitative
 failure boundary agrees quantitatively with a controlled ground truth.
+
+A numerical point estimate is insufficient near a qualitative transition. The
+certificate must include a computable approximation-error bound or interval for
+the matrix-free inverse-curvature and spectral quantities used in the decision.
 
 ### G3 — Added diagnostic value
 
@@ -58,6 +67,9 @@ different discrete optimizer transient behavior.
 
 A two- or three-component composition rule that retains useful reserve rather
 than collapsing immediately to zero or an impractical worst-case bound.
+
+The rule must make clear which sector it certifies. Positive-definite curvature
+normalization is not, by itself, a strict-saddle composition certificate.
 
 ## Stop conditions
 
