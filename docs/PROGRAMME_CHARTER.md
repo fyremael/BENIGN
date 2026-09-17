@@ -104,8 +104,9 @@ distinct proof obligations.
 
 ## 6. Composition target
 
-For two local components with normal Hessian blocks \(A,B\) and cross block
-\(C\), define
+The first composition unit test is restricted to a positive-normal-curvature
+sector. For two components near local minima, let \(A\succ0\) and \(B\succ0\)
+be their normal Hessian blocks and let \(C\) be the cross block. Define
 
 \[
 \chi =
@@ -115,7 +116,19 @@ For two local components with normal Hessian blocks \(A,B\) and cross block
 The condition \(\chi<1\) for positive block curvature follows from standard
 linear algebra and is not itself a BENIGN novelty claim.
 
-The research target is instead a law of the form
+This quantity must not be silently extended to indefinite saddle blocks. In a
+strict-saddle sector, BENIGN requires a separate signed/inertia-stability
+formulation that preserves the relevant negative direction while controlling
+coupling to positive and gauge directions.
+
+A second issue is equally important: nonlinear coupling generally moves the
+critical point. A compositional theorem therefore cannot inspect only the block
+Hessian at an uncoupled stationary point. It must first establish persistence or
+continuation of a nearby critical object under coupling, with an explicit bound
+on its displacement, and then certify the normal/quotient Hessian at that
+displaced critical object.
+
+The research target is therefore a law of the schematic form
 
 \[
 \mathfrak B_{\mathrm{coupled}}
@@ -123,20 +136,31 @@ The research target is instead a law of the form
 F(
   \mathfrak B_1,
   \mathfrak B_2,
-  \chi,
-  \delta
+  \mathcal C,
+  \delta,
+  \varepsilon
 ),
 \]
 
-where \(\delta\) controls nonlinear curvature variation, quotient effects, or
-other certified defects.
+where \(\mathcal C\) denotes the appropriate curvature-normalized coupling
+object, \(\delta\) controls nonlinear curvature variation and critical-point
+displacement, and \(\varepsilon\) is a certified numerical-estimation error.
 
 A useful law must:
 
 1. go beyond restating local Schur-complement positivity;
-2. admit matrix-free estimation;
-3. remain non-vacuous under at least small multi-block composition;
-4. predict a qualitative transition in controlled experiments.
+2. include existence/continuation and displacement of the coupled critical
+   object when coupling changes the stationarity equations;
+3. distinguish positive-curvature and strict-saddle sectors rather than using
+   an SPD normalization outside its domain;
+4. admit matrix-free estimation with explicit error bounds;
+5. remain non-vacuous under at least small multi-block composition;
+6. predict a qualitative transition in controlled experiments.
+
+Near a decision boundary, a point estimate is not a certificate. Matrix-free
+inverse-curvature and spectral approximations must carry an error bound or
+interval sharp enough to determine whether the available reserve has actually
+been exhausted.
 
 ## 7. Transformation classes
 
@@ -144,9 +168,11 @@ BENIGN distinguishes at least four classes.
 
 ### Conditioning transformations
 
-Smooth invertible reparameterizations and metric/preconditioner changes may
-dramatically change conditioning and trajectories while preserving local
-critical-point inertia.
+Smooth invertible reparameterizations preserve the inertia of the Hessian
+bilinear form at a critical point by congruence. Metric and preconditioner
+changes can substantially alter operator spectra and trajectories while leaving
+the underlying stationary set unchanged when the objective itself is fixed.
+These effects must not be confused with topology-changing presentations.
 
 ### Gauge removal
 
@@ -187,7 +213,7 @@ BENIGN does not presently claim:
 - that deep-learning landscapes are globally benign;
 - that strict-saddle theory adequately describes transformer-scale systems;
 - that benign continuous landscapes imply benign discrete optimization;
-- that \(\chi\) alone is a novel result;
+- that \(\chi\) alone is a novel result or a valid saddle-sector certificate;
 - that semantic equivalence is solved for arbitrary learned systems;
 - that a transformer-scale experiment constitutes programme validation.
 
