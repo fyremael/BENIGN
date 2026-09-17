@@ -33,25 +33,39 @@ Requirements:
 
 - compute the exact transition;
 - estimate it matrix-free;
+- attach a certified numerical error bound or interval to the matrix-free
+  estimate;
 - compare raw \(\|C\|\) against normalized interface gain;
 - deliberately vary component curvature scales;
-- verify that the normalized quantity predicts the invariant transition.
+- verify that the normalized quantity predicts the invariant transition;
+- verify that the certified interval resolves the side of the transition except
+  when the true problem is intentionally placed inside numerical uncertainty.
 
-This is the instrumentation unit test, not a research result by itself.
+This is the instrumentation unit test for a positive-curvature sector, not a
+research result by itself and not a strict-saddle certificate.
 
-## Stage 1 — Nonlinear local perturbation
+## Stage 1 — Nonlinear local perturbation and critical-point continuation
 
-Add controlled nonlinear terms with known local critical structure.
+Add controlled nonlinear terms with known local critical structure and coupling
+that moves the stationary point.
 
 Track:
 
+- existence/continuation of the nearby coupled critical point or critical
+  manifold;
+- displacement from the uncoupled critical object;
 - gradient reserve;
 - negative-curvature reserve;
 - positive normal-curvature reserve;
 - curvature variation radius.
 
 Requirement: the derived reserve must bound the observed qualitative transition
-without becoming vacuous.
+without becoming vacuous, and the certificate must be evaluated at the actual
+coupled critical object rather than only at the uncoupled reference point.
+
+At least one case should contain a strict saddle. Its certificate must use an
+explicit signed/inertia-stability construction rather than applying the SPD
+\(A^{-1/2}\), \(B^{-1/2}\) normalization outside its domain.
 
 ## Stage 2 — Quotient/factorized problem
 
@@ -119,7 +133,8 @@ Every relevant stage must include:
 - ordinary condition number;
 - raw Hessian extremal spectrum;
 - raw coupling norm;
-- normalized interface quantity;
+- normalized interface quantity where mathematically admissible;
+- certified approximation error for any matrix-free quantity used as a gate;
 - optimizer-state spectral radius where applicable;
 - finite-horizon amplification where applicable.
 
