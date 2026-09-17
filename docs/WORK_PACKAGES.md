@@ -41,21 +41,33 @@ non-vacuous constants.
 
 Develop curvature-normalized interface contracts.
 
-Starting point:
+The first unit test is restricted to the positive-normal-curvature sector:
 
 \[
 \chi=
-\|A^{-1/2}CB^{-1/2}\|_2.
+\|A^{-1/2}CB^{-1/2}\|_2,
+\qquad A,B\succ0.
 \]
+
+This SPD quantity is not to be reused as though it were already a strict-saddle
+certificate.
 
 Required advance:
 
 - nonlinear local formulation;
-- normal/quotient geometry;
+- persistence/continuation of the coupled critical object;
+- an explicit bound on critical-point displacement under coupling;
+- normal/quotient geometry evaluated at the displaced critical object;
+- a separate signed/inertia-stability treatment for strict-saddle sectors;
 - curvature variation control;
 - sparse multi-block extension;
-- matrix-free estimator;
-- theorem content beyond ordinary block-Hessian positivity.
+- matrix-free estimation with certified approximation-error bounds;
+- theorem content beyond ordinary block-Hessian positivity and standard
+  implicit-function persistence facts.
+
+A successful theorem must certify a qualitative property of the coupled system,
+not merely the Hessian of the uncoupled system at a point that ceases to be
+stationary after coupling.
 
 This is the principal standalone-programme survival package.
 
