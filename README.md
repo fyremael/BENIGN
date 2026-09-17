@@ -26,19 +26,21 @@ Given independently understood optimization presentations, determine whether
 landscape reserves, interface gains, and discrete dynamical margins can be
 propagated through their composition without becoming vacuous.
 
-The initial local interface quantity is
+The first interface unit test is restricted to positive normal curvature:
 
 \[
 \chi =
 \left\|A^{-1/2} C B^{-1/2}\right\|_2,
 \]
 
-where \(A\) and \(B\) are normal/local curvature operators for two components
-and \(C\) is their cross-coupling.
+where \(A,B\succ0\) are normal Hessian blocks near local minima and \(C\) is
+their cross-coupling.
 
-The elementary two-block condition \(\chi < 1\) is only the unit test. The
-research target is a nonlinear, quotient-aware, matrix-free compositional
-certificate that remains predictive beyond ordinary Schur-complement facts.
+The elementary two-block condition \(\chi < 1\) is only the instrumentation
+unit test. It is not a saddle-sector certificate. The research target is a
+nonlinear, quotient-aware, error-controlled matrix-free compositional
+certificate that also accounts for critical-point displacement and, separately,
+for signed/inertia stability in strict-saddle sectors.
 
 ## Programme status
 
